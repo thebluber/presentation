@@ -1,0 +1,172 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>impress.js | presentation tool based on the power of CSS3 transforms and transitions in modern browsers | by Bartek Szopka @bartaz</title>
+    
+    <meta name="description" content="impress.js is a presentation tool based on the power of CSS3 transforms and transitions in modern browsers and inspired by the idea behind prezi.com." />
+    <meta name="author" content="Bartek Szopka" />
+
+    <link href="css/impress-demo.css" rel="stylesheet" />
+    <link href="css/font.css" rel="stylesheet" />
+
+</head>
+<body class="impress-not-supported">
+
+<!--
+    For example this fallback message is only visible when there is `impress-not-supported` class on body.
+-->
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+    <div class="step" id="title" data-x="0" data-y="0" data-scale="4">
+      <h2>Effective</h2>
+      <h1>Testing</h1>
+    </div>
+
+    <div class="step" id="introduction" data-x="-2000" data-y="400">
+      <h1><strong>Why</strong> do we test?</h1>
+    </div>
+
+    <div class="step" id="outline" data-x="-1800" data-y="1000">
+      <h1>Outline</h1>
+      <ul>
+        <li>Testing in General</li>
+        <li>Effectiveness of Testing</li>
+        <li>Problems with Testing</li>
+        <li>Strategies for Effective Testing</li>
+      </ul>
+    </div>
+
+    <div class="step slide slidelist" data-x="-2000" data-y="-1000">
+      <img src="mindmap.png" />
+    </div>
+
+    <div class="step slide" data-x="-1000" data-y="-1000">
+      <h1><strong>Effectiveness of Testing</strong></h1>
+      <table id="defect-detection-rates">
+        <thead>
+          <td>Method</td><td>Defect-Detection Rates</td>
+        </thead>
+        <tbody>
+          <tr class="red">
+          <td>Unit test</td><td>30%</td>
+          </tr>
+          <tr>
+          <td>Component test</td><td>30%</td>
+          </tr>
+          <tr>
+          <td>Integration test</td><td>35%</td>
+          </tr>
+          <tr>
+          <td>Regression test</td><td>25%</td>
+          </tr>
+          <tr>
+            <td>
+              <img class="dots" src="dots.png"/>
+            </td>
+            <td>
+              <img class="dots" src="dots.png"/>
+            </td>
+          </tr>
+          <tr>
+          <td>Informal design reviews</td><td>35%</td>
+          </tr>
+          <tr>
+          <td>Formal design inspections</td><td>55%</td>
+          </tr>
+          <tr>
+          <td>Formal code inspections</td><td>60%</td>
+          </tr>
+          <tr>
+          <td>Prototyping</td><td>65%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="step slide slidelist" data-x="0" data-y="-1000">
+        <img class="figure left" src="testing-alone.png"/>
+        <img class="figure right"src="testing-all.png"/>
+        <figcaption class="left red">&lt;= 35% </figcaption>
+        <figcaption class="right red">Better</figcaption>
+      <h1 class="left center"><strong>Why is testing not efficient?</strong></h1>
+    </div>
+
+    <div class="step slide slidelist" data-x="1000" data-y="-1000">
+      <h1><strong>Problems with Developer Testing</strong></h1>
+      <ul>
+        <li>Unwillingness to find errors</li>
+        <li class="sub">Clean Test vs Dirty Test</li>
+        <li>Insufficient test coverage</li>
+        <li class="sub">Statement Coverage: tested lines</li>
+        <li class="sub">Branch Coverage: tested pathes</li>
+      </ul>
+    </div>
+    <div class="step slide" data-x="2000" data-y="-1000">
+      <h1><strong>Statement Coverage vs Branch Coverage</strong></h1>
+      <p><b>Example:</b> <br>
+      <br>
+      statement1;<br>
+      if (predicate) { <br>
+      &nbsp;&nbsp;statement2;<br>
+      }<br>
+      statement3
+      </p>
+      <img id="graph" src="graph.png"/>
+    </div>
+
+    <div class="step slide slidelist" data-x="2000" data-y="-250">
+      <h1><strong>Effective Testing</strong></h1>
+      <ul>
+        <li>Hope to find bugs</li>
+        <li>Aim for better test coverage</li>
+        <li>Test as early as possible</li>
+        <li>Test often and automatically</li>
+        <li>Testing the test</li>
+    </div>
+
+    <div class="step slide" data-x="2000" data-y="500">
+      <h1><strong>Test as Early as Possible</strong></h1>
+      <img src="boehm_curve.png"/>
+      <span class="left">http://www.cgl.ucsf.edu/Outreach/bmi280/slides/swc/lec/img
+        /dev01/boehm_curve.png
+      </span>
+    </div>
+
+    <div class="step slide slidelist" data-x="2000" data-y="1250">
+      <h1><strong>Test Often and Automatically</strong></h1>
+      <ul>
+        <li>Test after changes</li>
+        <li class="sub">Regression Testing</li>
+        <li class="sub">Find bug once</li>
+      </ul>
+    </div>
+
+    <div class="step slide slidelist" data-x="1000" data-y="1250">
+      <h1><strong>Testing the Test</strong></h1>
+      <ul>
+        <li>Errors in testcases</li>
+        <li>Mutation Testing</li>
+        <li>Saboteur</li>
+      </ul>
+    </div>
+
+    <div class="step" data-x="0" data-y="1000">
+      <h1><strong>Take-home Message</strong></h1>
+      <ul>
+        <li>Test for high quality</li>
+        <li>Combine different techniques</li>
+        <li>Develope better testing habits</li>
+      </ul>
+    </div>
+</div>
+<script src="js/impress.js"></script>
+<script>impress().init();</script>
+</html>
